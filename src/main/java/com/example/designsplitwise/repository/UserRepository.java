@@ -4,4 +4,7 @@ import com.example.designsplitwise.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, String> {
+    boolean existsByUsername(String username);
+
+    boolean existsByEmail(String email);
 }

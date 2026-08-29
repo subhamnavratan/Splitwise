@@ -18,6 +18,17 @@ public class UserService {
     }
 
     public String createUser(String username, String email) {
+        if (userRepository.existsByUsername(username)) {
+            throw new IllegalArgumentException(
+                    "Username already exists"
+            );
+        }
+
+        if (userRepository.existsByEmail(email)) {
+            throw new IllegalArgumentException(
+                    "Email already exists"
+            );
+        }
         User user = new User();
         user.setUsername(username);
         user.setEmail(email);

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GroupRequest {
+public class  GroupRequest {
     private String groupName;
     private String groupDescription;
     private List<String> groupMembers;
